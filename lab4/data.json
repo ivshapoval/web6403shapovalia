@@ -1,0 +1,42 @@
+{
+  "/home": {
+      "get": {
+          "data": [
+            {
+	      "imageLocation": "../pictures/guitars/Fender-Ritchie-Blackmore-Stratocaster.png",
+              "name": "Fender Ritchie Blackmore Stratocaster",
+              "cost": "216000,00",
+              "description": [
+                            "Электрогитара Fender Ritchie Blackmore Stratocaster — это идеальный инструмент ",
+			                      "для поклонников рок-музыки и творчества легендарного гитариста Deep Purple ", 
+			                      "по доступной цене!"
+              ]
+            },
+            {
+	      "imageLocation": "../pictures/guitars/Gibson-Les-Paul-Burgundy.png",
+              "name": "Gibson Les Paul Burgundy",
+              "cost": "318000,00",
+              "description": [
+                            " Классический Лес Пол с великолепным звучанием и элегантным дизайном, выполненным ",
+                            "в насыщенном бордовом цвете. С мощными хамбакерами и удобным грифом, она идеально ", 
+                            "подходит как для студийной записи, так и для живых выступлений."
+              ]
+            },
+            {
+	      "imageLocation": "../pictures/guitars/Ibanez ARX320.jpg",
+              "name": "Ibanez ARX500",
+              "cost": "80000,00",
+              "description": [
+                            "Электрогитара Ibanez ARX500 сочетает в себе стильный дизайн и высококачественные ",
+                            "компоненты, что делает её идеальным выбором для музыкантов, стремящихся к универсальности ", 
+                            "и выразительности звука. Она подходит для различных музыкальных стилей."
+              ]
+            }
+          ]
+      },
+      "post": {
+            "data": [
+            ]
+        }
+  }
+}

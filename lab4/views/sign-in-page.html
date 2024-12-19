@@ -1,0 +1,191 @@
+<html>
+<head>
+    <title>Website Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <meta charset="utf-8">
+
+    <style>
+        .container-textboxes {
+            grid-template-rows: 33px;
+            margin-top: 20px;
+            margin-left: 265px;
+            display: grid;
+            grid-gap: 25px;
+        }
+        .textbox{
+            width:345px;
+        }
+        .textbox-text {
+            padding: 16px;
+            height: 30px;
+            width: 80%;
+            border-radius: 4px;
+            border: 1px solid #767676;
+        }
+        .button-signin {
+            padding-top: 15px;
+            width: 570px;
+        }
+        a.button-signin-text {
+            color: #f13f31;
+            padding: 12px;
+            border: 2px solid #f13f31;
+            border-radius: 8px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 100;
+        }
+        .request-justification {
+            color: black;
+        }
+        .entry-justification {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="width-100 top-header">
+        <div class="container">
+            <a href="start-page.html" class="logo">
+                <img src="../pictures/logo.png">
+            </a>
+        </div>
+    </div>
+    <div class="width-100 search-panel">
+        <div class="container">
+            <div class="width-50">
+                <input class="search-textbox" type="text" Placeholder="Поиск...">
+                <button class="search-button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="width-30">
+                <ul class="cart-sect">
+                    <li>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        <a href="sign-in-page.html">Войти</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        <a class="head1mr" href="#">Мои заказы</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <a href="#">Корзина</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="width-100">
+        <div class="container">
+            <ul class="main-menu">
+                <li>
+                    <a href="guitars-page.html">Гитары</a>
+                </li>
+                <li>
+                    <a href="#">Струны</a>
+                </li>
+                <li>
+                    <a href="#">Аксессуары</a>
+                </li>
+                <li>
+                    <a href="#">Усилители</a>
+                </li>
+                <li>
+                    <a href="#">Эффекты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+<a class="hello-text">Введите логин и пароль</a>
+
+
+<div class="sign-in">
+    <div class="container-textboxes">
+
+        <div class="textbox">
+          <input class="textbox-text" Placeholder="Имя пользователя", id="username">
+        </div>
+
+        <div class="textbox">
+          <input class="textbox-text" Placeholder="Пароль", id="password">
+        </div>
+
+        <div class="button-signin", id="loginButton">
+          <a class="button-signin-text", id="loginText">Войти</a>
+        </div>
+
+        <div id="responseResults">Тут будет результат запроса...</div>
+
+        <div class="entry-justification" hidden="true" id="label">Некорректный ввод!</div>
+
+    </div>
+  </div> 
+</body>
+
+  
+  <script>
+    document.getElementById('loginButton').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const responseResults = document.getElementById('responseResults');
+
+        const data = {
+            username: username,
+            password: password
+        };
+        fetch('http://localhost:8000/home', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => { 
+            responseResults.textContent = "Запрос был успешен"; 
+            responseResults.style.color = 'green';
+        }
+        )
+        .catch(error => {
+            responseResults.textContent = "Ошибка запроса"; 
+            responseResults.style.color = 'red'
+        }, 
+        );
+   });
+
+    document.getElementById('username').addEventListener('input', updateButtonText);
+    document.getElementById('password').addEventListener('input', updateButtonText);
+
+    function updateButtonText() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const loginText = document.getElementById('loginText');
+
+        if (username === "Хочу" && password === "Автомат") {
+            loginText.textContent = "Поставить";
+        } else {
+            loginText.textContent = "Войти"; 
+        }
+    }
+
+   document.getElementById('loginButton').addEventListener('click', function(event) {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const label = document.getElementById('label');
+
+        if (username === "Хочу" && password === "Автомат") {
+            label.style.color = 'green';
+            label.textContent = "Cпасибо!";
+            label.hidden = false;   
+        }
+        else {
+            label.style.color = 'red';
+            label.textContent = "Некорректный ввод!";
+            label.hidden = false;
+        }
+   });
+</script>

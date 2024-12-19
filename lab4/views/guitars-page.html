@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>Website Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <meta charset="utf-8">
+
+    <style>
+        .product-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 10px;
+        }
+        .product-grey {
+            margin-bottom:23px;
+        }
+    </style>
+</head>
+<body>
+<div class="width-100 top-header">
+    <div class="container">
+        <a href="start-page.html" class="logo">
+            <img src="../pictures/logo.png">
+        </a>
+    </div>
+</div>
+<div class="width-100 search-panel">
+    <div class="container">
+        <div class="width-50">
+            <input class="search-textbox" type="text" Placeholder="Поиск...">
+            <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="width-30">
+            <ul class="cart-sect">
+                <li>
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <a href="sign-in-page.html">Войти</a>
+                </li>
+                <li>
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <a class="head1mr" href="#">Мои заказы</a>
+                </li>
+                <li>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <a href="#">Корзина</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="width-100">
+    <div class="container">
+        <ul class="main-menu">
+            <li>
+                <a href="guitars-page.html">Гитары</a>
+            </li>
+            <li>
+                <a href="#">Струны</a>
+            </li>
+            <li>
+                <a href="#">Аксессуары</a>
+            </li>
+            <li>
+                <a href="#">Усилители</a>
+            </li>
+            <li>
+                <a href="#">Эффекты</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<a class="hello-text">
+    Ассортимент гитар
+</a>
+
+<div id="guitarList"></div>
+
+</body>
+
+<script>
+    window.onload = asyncRequest;
+
+    let guitars = [];
+
+    async function asyncRequest() {
+        try {
+            const serverResponse = await fetch('http://localhost:8000/home');
+            const responseData = await serverResponse.json();
+            guitarsData = responseData.data;
+            const guitarList = document.getElementById('guitarList');
+            guitarList.innerHTML = '';
+            
+            guitarsData.forEach(guitar => {
+                const guitarDiv = document.createElement('div');
+                guitarDiv.className = 'guitar';
+                guitarDiv.innerHTML = `
+                    <meta charset="utf-8">
+                    <div class="product-wrapper", id="guitarList">
+                        <div class="product-grey">
+                            <img class="product-img" src="${guitar.imageLocation}">
+                        <div class="product-name">${guitar.name}</div>
+                        <div class="product-price">₽${guitar.cost}</div>
+                            <p class="product-description">${guitar.description[0]}<br>${guitar.description[1]}<br>${guitar.description[2]}</p>
+                        </div>
+                    </div>
+                `;
+                guitarList.appendChild(guitarDiv);
+        });
+        } catch (error) {
+            console.error("Ошибка!", error);
+        }
+    }
+</script>

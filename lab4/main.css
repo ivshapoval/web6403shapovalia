@@ -1,0 +1,327 @@
+html, body {
+  font-family: Roboto, sans-serif, arial;
+  font-size: 14px;
+  color: #242424;
+  font-weight: 400;
+}
+
+html {
+  -webkit-text-size-adjust:100%;
+  -ms-text-size-adjust:100%;
+  font-size:10px;
+  -webkit-tap-highlight-color:transparent
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  outline:0;
+}
+
+.container {
+  width:1150px;
+  margin:0px auto;
+  display:table;
+}
+
+.width-50 {
+  width:50%;
+  float:left;
+}
+
+.width-30 {
+  width:38%;
+  float:right;
+}
+
+.width-100 {
+  width:100%;
+  float:left;
+}
+
+.top-header {
+  background: #ffffff;
+  padding: 8px 0px;
+  border-bottom: 1px solid #3131315e;
+}
+
+.logo img{
+  width: 320px;
+  height: 90px;
+}
+
+.search-panel {
+  background: #f13f31;
+  padding: 12px 0px;
+}
+
+.search-textbox {
+  padding-left: 16px;
+  height: 40px;
+  width: 80%;
+  border: 1px solid #fff;
+  float: left;
+}
+
+.search-button {
+  height: 42px;
+  width: 55px;
+  border: none;
+  background: white;
+  float: left;
+}
+
+.search-button i {
+  color: #f13f31;
+}
+
+.cart-sect {
+  list-style: none;
+  float: left;
+  margin-top: 10px;
+}
+
+.cart-sect li {
+  float: left;
+  padding: 0px 6px;
+}
+
+.cart-sect li a {
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+
+.cart-sect li i {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.main-menu {
+  list-style: none;
+}
+
+.main-menu a {
+  font-weight: 500;
+  color: #2b304a;
+  font-size: 17px;
+  font-family: Roboto, sans-serif, arial;
+  text-decoration: none;
+}
+
+.main-menu li {
+  float: left;
+  padding: 12px 20px;
+}
+
+.sign-in {
+  padding-top: 40px;
+}
+
+.sign-in-text {
+  
+  margin:0px auto;
+  font-weight: 500;
+  position: relative;
+  top: 8px;
+  color: #2b304a;
+  font-size: 22px;
+  font-family: Roboto, sans-serif, arial;
+  text-decoration: none;
+}
+
+.login-textbox, .password-textbox{
+  width:30%;
+  float:left;
+  margin-bottom: 19px;
+}
+
+.login-textbox-text {
+  margin-left: 0px;
+  padding: 16px;
+  height: 30px;
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid #767676;
+  float: left;
+}
+
+.password-textbox-text {
+  margin-left: -48px;
+  padding: 16px;
+  height: 30px;
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid #767676;
+  float: left;
+}
+
+a.button-sign-in-text {
+  display: inline-block;
+  background: #ffffff;
+  position: relative;
+  color: #f13f31;
+  padding: 12px;
+  border: 2px solid #f13f31; /* Параметры рамки */
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 100;
+}
+
+.button-sign-in {
+  margin-top: 17px;
+  text-align: center;
+}
+
+.table{
+  position: relative;
+  top: 60px;
+  border: 1px solid #eee;
+  table-layout: fixed;
+  width: 70%;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  animation-name: move-and-fade;
+  animation-duration: 1000ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes move-and-fade {
+  from {
+    top: 0px;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.table td {
+	font-weight: bold;
+	padding: 5px;
+	background: #e6e6e6;
+	border: 1px solid #d8d8d8;
+}
+
+.table th {
+	padding: 5px 10px;
+	border: 1px solid #eee;
+	text-align: left;
+}
+
+.table-photo{
+	background: #fff;
+  width: 232px;
+}
+
+.hello-text {
+  position: relative;
+  left: 265px;
+  top: 26px;
+  font-weight: 500;
+  color: #2b304a;
+  font-size: 28px;
+  font-family: Roboto, sans-serif, arial;
+  text-decoration: none;
+}
+
+.start-text {
+  position: relative;
+  left: 265px;
+  top: 50px;
+  line-height: 1.7;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.product-wrapper {
+  position: relative;
+  top: 50px;
+  width: 70%;
+  margin-bottom: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 1170px;
+  margin: 10 auto;
+
+  animation-name: move-and-fade;
+  animation-duration: 1000ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes move-and-fade {
+  from {
+    top: 0px;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.product-grey {
+  position: relative;
+  border-radius: 25px;
+  height: 200px;
+  background-color: #e6e6e6;
+}
+
+.product-white {
+  position: relative;
+  border-radius: 25px;
+  height: 200px;
+  background-color: #ffffff;
+}
+
+.product-img {
+  width:180px;
+  height:180px;
+  border-radius: 10%;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  position: absolute;
+  top: 16px;
+  left: 210px;
+  font-weight: 500;
+  color: #2b304a;
+  font-size: 22px;
+  font-family: Roboto, sans-serif, arial;
+  text-decoration: none;
+}
+
+.product-price {
+  position: absolute;
+  top: 16px;
+  right: 40px;
+  color: #2b304a;
+  font-size: 26px;
+  letter-spacing: 0.1px;
+  font-weight: 600;
+  font-family: Roboto, sans-serif, arial;
+}
+
+.product-description {
+  position: absolute;
+  top: 65px;
+  left: 210px;
+  font-weight: 300;
+  color: #2b304a;
+  font-size: 18px;
+  font-family: Roboto, sans-serif, arial;
+  text-decoration: none;
+}
+
